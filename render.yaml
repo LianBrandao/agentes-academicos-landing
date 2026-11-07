@@ -31,10 +31,3 @@ services:
       - path: /img/*
         name: Cache-Control
         value: public, max-age=604800
-    routes:
-      - type: rewrite
-        source: /render.yaml
-        destination: /index.html
-      - type: rewrite
-        source: /README.md
-        destination: /index.html
