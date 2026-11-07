@@ -1,9 +1,14 @@
-# Agentes Acadêmicos Prof. Lian — Landing
+# Agentes Acadêmicos — Prof. Lian Brandão
 
-Página de vendas estática do produto **Agentes Acadêmicos Prof. Lian (Método RASTRO)**.
+Experiência imersiva de uma seção para o produto **Agentes Acadêmicos (Método RASTRO)**:
+abertura com a logomarca → o pacote em 3D → a constelação dos 20 agentes → mergulho em cada um.
+Todos os botões de compra levam ao checkout da Hotmart.
 
-- `index.html` — a página (todos os botões "Quero os Agentes" levam ao checkout da Hotmart)
-- `img/` — logomarca colorida, foto do Prof. Lian, capa do produto
-- `render.yaml` — deploy como Static Site gratuito no Render (sem build)
+- `index.html` · `css/app.css` · `js/app.js` — sem framework, sem dependência externa
+- `fonts/` — Sora e Inter (Brand Book), subconjunto latino em woff2
+- `img/` — logomarca colorida, foto, textura
+- `render.yaml` — Static Site gratuito no Render, com cabeçalhos de segurança (CSP só `'self'`)
 
-Este repositório contém **só a landing**. O kit vendido (apostila, mega-prompt, planilha) não fica aqui — é entregue pela Hotmart.
+Links diretos: `#constelacao`, `#agente-06` (qualquer número de 01 a 20), `#oferta`, `#agentes`.
+
+Este repositório contém **só a página**. O kit vendido não fica aqui — é entregue pela Hotmart.
