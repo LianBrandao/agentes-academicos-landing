@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: agentes-academicos-prof-lian
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /img/*
+        name: Cache-Control
+        value: public, max-age=604800

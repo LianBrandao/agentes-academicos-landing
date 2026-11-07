@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentes Acadêmicos Prof. Lian — Método RASTRO</title>
+<meta name="description" content="20 especialistas de IA para o seu ChatGPT: leem seus artigos, extraem cada dado com a página de onde saiu e organizam sua pesquisa. Apostila + Matriz em Excel. R$97.">
+<meta property="og:title" content="Agentes Acadêmicos Prof. Lian — Método RASTRO">
+<meta property="og:description" content="Seu ChatGPT vira uma equipe de pesquisa — sem inventar nada. R$97, pagamento único.">
+<meta property="og:image" content="img/og.jpg"><meta property="og:type" content="website">
+<link rel="icon" href="img/logo-lian.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#02040A; --bg2:#071A2F; --panel:#0A1422;
+  --cy:#00D9FF; --bl:#136DFF; --gold:#D4A03C;
+  --ink:#F4F7FB; --ink2:#B8C6D9; --ink3:#7A8A9E;
+  --line:rgba(0,217,255,.16); --line2:rgba(255,255,255,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;
+  background-image:radial-gradient(circle at 80% -10%,rgba(19,109,255,.12),transparent 45%),radial-gradient(circle at 0% 30%,rgba(0,217,255,.07),transparent 40%)}
+h1,h2,h3,.disp{font-family:'Sora',sans-serif;font-weight:800;line-height:1.12;letter-spacing:-.5px}
+.cy{color:var(--cy)} .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cy);font-weight:600;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cy);color:#02131a;font-weight:700;
+  font-family:'Sora';font-size:17px;padding:16px 28px;border-radius:12px;text-decoration:none;border:2px solid var(--cy);
+  box-shadow:0 4px 0 #0090ad;transition:transform .1s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cy);box-shadow:none}
+.micro{font-size:13px;color:var(--ink3);margin-top:12px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(2,4,10,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center}.logo img{height:30px;width:auto;display:block}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:14px}
+.nav-links a:hover{color:var(--cy)}
+.nav .btn{padding:9px 18px;font-size:14px;box-shadow:0 3px 0 #0090ad}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:64px}
+.hero h1{font-size:46px;margin:6px 0 18px}
+.hero p.sub{font-size:19px;color:var(--ink2);margin-bottom:28px;max-width:560px}
+.hero-img{aspect-ratio:4/5;border-radius:18px;border:2px solid var(--line);background:
+  linear-gradient(135deg,#06121f,#0a1c30);display:flex;align-items:center;justify-content:center;
+  color:var(--ink3);text-align:center;font-size:14px;padding:24px;box-shadow:0 0 60px rgba(0,217,255,.10) inset}
+/* cards */
+.cards{display:grid;gap:18px}
+.c3{grid-template-columns:repeat(3,1fr)} .c2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:24px}
+.card.dor{border-left:3px solid var(--gold)}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{color:var(--ink2);font-size:15px}
+.lead{font-size:15px;color:var(--ink3);text-align:center;margin-top:22px;font-style:italic}
+h2.big{font-size:34px;margin-bottom:10px}
+.sub2{color:var(--ink2);font-size:18px;max-width:680px}
+.center{text-align:center} .center .sub2{margin:0 auto}
+/* skills grid */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:36px}
+.skill{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px 16px;display:flex;gap:12px;align-items:flex-start}
+.skill .dot{flex:none;width:10px;height:10px;border-radius:3px;background:var(--cy);margin-top:6px;box-shadow:0 0 10px var(--cy)}
+.skill b{font-family:'Sora';font-weight:600;font-size:15px}
+.skill small{display:block;color:var(--ink3);font-size:13px;margin-top:2px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.step{background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:26px;text-align:center}
+.step .n{font-family:'Sora';font-weight:800;font-size:26px;color:var(--bg);background:var(--cy);width:48px;height:48px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step h3{font-size:18px;margin-bottom:6px} .step p{color:var(--ink2);font-size:15px}
+/* selos */
+.selos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.selo{border:1px solid var(--cy);border-radius:14px;padding:22px;background:rgba(0,217,255,.04)}
+.selo b{font-family:'Sora';font-size:17px;display:block;margin-bottom:6px}
+.selo p{color:var(--ink2);font-size:14px}
+/* autoridade */
+.auth{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.auth-img{aspect-ratio:1/1;border-radius:18px;border:2px solid var(--line);background:linear-gradient(135deg,#06121f,#0a1c30);
+  display:flex;align-items:center;justify-content:center;color:var(--ink3);text-align:center;font-size:14px;padding:20px}
+/* oferta */
+.oferta{background:linear-gradient(160deg,#081a2e,#040c16);border:2px solid var(--cy);border-radius:22px;
+  padding:44px;max-width:720px;margin:0 auto;box-shadow:0 0 70px rgba(0,217,255,.12)}
+.price{font-family:'Sora';font-weight:800;font-size:54px;color:var(--cy);line-height:1}
+.price small{font-size:18px;color:var(--ink2);font-weight:400}
+.stack{list-style:none;margin:24px 0}
+.stack li{padding:8px 0;color:var(--ink);font-size:16px;display:flex;gap:10px}
+.stack li::before{content:"✓";color:var(--cy);font-weight:800}
+.anchor{color:var(--ink3);font-size:14px;margin:6px 0 18px}
+.guar{background:rgba(212,160,60,.1);border:1px solid var(--gold);border-radius:12px;padding:14px 16px;color:var(--ink2);font-size:14px;margin:18px 0}
+.guar b{color:var(--gold)}
+/* faq */
+.faq{max-width:760px;margin:30px auto 0}
+details{border:1px solid var(--line2);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:var(--panel)}
+summary{cursor:pointer;font-family:'Sora';font-weight:600;font-size:16px;padding:14px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--cy);font-size:20px}
+details[open] summary::after{content:"–"}
+details p{color:var(--ink2);font-size:15px;padding:0 0 16px}
+/* cta final + footer */
+.final{text-align:center;background:radial-gradient(circle at 50% 0%,rgba(19,109,255,.15),transparent 60%)}
+.final h2{font-size:38px;margin-bottom:12px}
+footer{border-top:1px solid var(--line2);padding:32px 0;color:var(--ink3);font-size:13px;text-align:center}
+@media(max-width:860px){
+  .hero,.auth{grid-template-columns:1fr} .hero{padding-top:36px}
+  .hero h1{font-size:34px} h2.big,.final h2{font-size:27px}
+  .c3,.c2,.steps,.selos{grid-template-columns:1fr}
+  .nav-links a:not(.btn){display:none} section{padding:60px 0} .oferta{padding:28px}
+  .price{font-size:42px}
+}
+.hero-photo{aspect-ratio:1/1;padding:0;overflow:hidden}.hero-photo img,.auth-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.auth-photo{padding:0;overflow:hidden;aspect-ratio:3/4}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav">
+  <a href="#" class="logo" aria-label="Prof. Lian Brandão"><img src="img/logo-lian.png" alt="LIAN — Prof. Lian Brandão" height="30"></a>
+  <div class="nav-links">
+    <a href="#recebo">O que recebo</a>
+    <a href="#como">Como funciona</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://pay.hotmart.com/M108380282Q" class="btn">Quero os Agentes</a>
+  </div>
+</div></nav>
+
+<header class="wrap hero">
+  <div>
+    <div class="eyebrow">Para quem escreve TCC, dissertação, tese ou artigo</div>
+    <h1>Seu ChatGPT vira uma equipe de pesquisa — <span class="cy">sem inventar nada.</span></h1>
+    <p class="sub">Instale 20 especialistas que leem seus artigos, extraem cada dado com a página de onde saiu e preparam sua pesquisa. Você economiza horas e escreve com segurança — a autoria continua 100% sua.</p>
+    <a href="https://pay.hotmart.com/M108380282Q" class="btn">Quero os 20 Agentes — R$97</a>
+    <p class="micro">Instala em 2 minutos no seu ChatGPT. Funciona no plano grátis.</p>
+  </div>
+  <div class="hero-img hero-photo"><img src="img/agentes-academicos.jpg" alt="Agentes Acadêmicos Prof. Lian — 20 especialistas para sua pesquisa" width="1000" height="1000"></div>
+</header>
+
+<section>
+  <div class="wrap center">
+    <h2 class="big">A IA já entrou na sua pesquisa.<br>Sem método, ela atrapalha mais que ajuda.</h2>
+  </div>
+  <div class="wrap cards c3" style="margin-top:36px">
+    <div class="card dor"><h3>Texto raso</h3><p>Você pede um resumo… e vem algo genérico, que serve pra qualquer trabalho.</p></div>
+    <div class="card dor"><h3>Fonte inventada</h3><p>A IA cria uma citação que não existe — e você quase entrega com ela.</p></div>
+    <div class="card dor"><h3>Tempo perdido</h3><p>O prazo encolhe e você ainda está lendo o primeiro artigo.</p></div>
+  </div>
+  <p class="lead">Usar IA não é o problema. Usar IA solta, sem método, é.</p>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="wrap center">
+    <div class="eyebrow">A virada</div>
+    <h2 class="big">Não é um ChatGPT solto. É uma equipe com método.</h2>
+    <p class="sub2">20 especialistas e 1 guia (o Maestro). Você só conversa em português — eles leem, ficham, comparam e organizam tudo. Sem inventar, sem plágio, sem apud.</p>
+  </div>
+</section>
+
+<section id="recebo">
+  <div class="wrap center">
+    <div class="eyebrow">O que você recebe</div>
+    <h2 class="big">20 especialistas trabalhando por você</h2>
+  </div>
+  <div class="wrap skills">
+    <div class="skill"><span class="dot"></span><div><b>Achar o tema</b><small>do amplo ao recorte viável</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Fichar artigos</b><small>com os números reais</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Tabela de evidências</b><small>todo o acervo num lugar</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Achar a lacuna</b><small>a sua contribuição</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Comparar estudos</b><small>quem concorda, quem diverge</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Referências ABNT/APA</b><small>sem inventar DOI</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Roteiro de escrita</b><small>você escreve, com guia</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Modo Banca</b><small>as perguntas difíceis antes</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Matriz em Excel (bônus)</b><small>a linha de cada artigo, pronta</small></div></div>
+    <div class="skill"><span class="dot"></span><div><b>Dossiê final</b><small>tudo organizado</small></div></div>
+  </div>
+</section>
+
+<section id="como" style="background:var(--bg2)">
+  <div class="wrap center">
+    <div class="eyebrow">Como funciona</div>
+    <h2 class="big">Do zero ao dossiê em 3 passos</h2>
+  </div>
+  <div class="wrap steps">
+    <div class="step"><div class="n">1</div><h3>Instala</h3><p>Anexa um arquivo numa conversa nova do ChatGPT. Leva 2 minutos.</p></div>
+    <div class="step"><div class="n">2</div><h3>Conversa</h3><p>Manda um artigo por vez e diz o que precisa, em português.</p></div>
+    <div class="step"><div class="n">3</div><h3>Recebe</h3><p>Fichas, tabelas, roteiros e um dossiê pronto pra você escrever.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center" style="margin-bottom:28px"><div class="eyebrow">Por que é diferente</div><h2 class="big">Feito pra proteger o seu nome</h2></div>
+  <div class="wrap selos">
+    <div class="selo"><b>Nunca inventa fonte</b><p>Faltou o dado? Ele escreve “ausente”, não chuta.</p></div>
+    <div class="selo"><b>Nunca plágio — você é o autor</b><p>Ele te dá o roteiro; quem escreve é você.</p></div>
+    <div class="selo"><b>Rastreável (Portaria CNPq)</b><p>Cada dado vem com a página de onde saiu.</p></div>
+  </div>
+</section>
+
+<section id="sobre" style="background:var(--bg2)">
+  <div class="wrap auth">
+    <div class="auth-img auth-photo"><img src="img/prof-lian.jpg" alt="Prof. Lian Brandão" loading="lazy" width="900" height="1200"></div>
+    <div>
+      <div class="eyebrow">Quem está por trás</div>
+      <h2 class="big">Feito por quem vive a pesquisa.</h2>
+      <p class="sub2">Prof. Lian Brandão — professor titular, 16 anos de docência e dezenas de artigos publicados. Não é mais um vendedor de prompt: é o método de quem está dentro da ciência.</p>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="oferta">
+    <div class="eyebrow">A oferta</div>
+    <div class="price">R$97 <small>— pagamento único, seu pra sempre</small></div>
+    <ul class="stack">
+      <li>Os 20 Especialistas (kit completo)</li>
+      <li>Apostila ilustrada de 33 páginas, com 12 receitas prontas pra copiar</li>
+      <li>Meta-prompts por nível: graduação, mestrado e doutorado</li>
+      <li><b>Bônus:</b> Matriz de Revisão de Literatura em Excel, com painel</li>
+      <li><b>Bônus:</b> Modo Tabela — a linha de cada artigo preenchida sozinha</li>
+      <li>Atualizações incluídas</li>
+    </ul>
+    <p class="anchor">Menos que uma única revisão de português de um capítulo.</p>
+    <div class="guar"><b>Garantia de 7 dias.</b> Instalou, não curtiu, devolvemos cada centavo. O risco é meu.</div>
+        <a href="https://pay.hotmart.com/M108380282Q" class="btn" style="width:100%;justify-content:center">Quero os 20 Agentes — R$97</a>
+    <p class="micro">Você só precisa de uma conta no ChatGPT ou Claude — o grátis já serve.</p>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--bg2)">
+  <div class="wrap center"><div class="eyebrow">Dúvidas</div><h2 class="big">Perguntas frequentes</h2></div>
+  <div class="wrap faq">
+    <details><summary>Ele escreve meu trabalho?</summary><p>Não. Ele te dá o material e o roteiro; você escreve — e a autoria é sua.</p></details>
+    <details><summary>A IA não inventa dados?</summary><p>A regra é nunca inventar; o que falta vira “ausente”. Ainda assim, você confere na fonte — é apoio, não oráculo.</p></details>
+    <details><summary>Preciso pagar o ChatGPT?</summary><p>Funciona no grátis pra começar; o pago ajuda quem usa muito.</p></details>
+    <details><summary>Serve pro meu nível e área?</summary><p>TCC, mestrado, doutorado, artigo — qualquer área do conhecimento.</p></details>
+    <details><summary>E o plágio?</summary><p>Ele não entrega texto pra colar; te dá roteiro e material de estudo pra você escrever com suas palavras.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>O prazo não espera. Seu método, agora.</h2>
+    <p class="sub2 center" style="margin-bottom:28px">Pare de brigar com o ChatGPT. Pesquise com método — do tema à entrega.</p>
+    <a href="https://pay.hotmart.com/M108380282Q" class="btn">Quero os 20 Agentes — R$97</a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  Ferramenta de apoio à organização e preparação da pesquisa. Não substitui a autoria nem garante aprovação/publicação.<br>
+  Uso ético e responsável de IA, alinhado à Portaria CNPq 2.664/2026. &nbsp;·&nbsp; © Prof. Lian Brandão
+</div></footer>
+
+</body>
+</html>
