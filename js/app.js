@@ -26,84 +26,64 @@
   const AGENTS = [
     { n: '01', ph: 0, name: 'Maestro', use: 'Dizer o que você precisa, do seu jeito.',
       pratica: 'Você não precisa saber qual agente chamar. Escreve do seu jeito — “esse artigo serve pro meu trabalho?” — e o Maestro aciona só as funções necessárias.',
-      get: 'Atendimento direto ou uma orientação curta, e a coordenação das funções necessárias para o seu pedido.',
-      pede: 'Este é o meu projeto e este outro arquivo é um artigo externo. Ele ajuda no meu trabalho?' },
+      get: 'Atendimento direto ou uma orientação curta, e a coordenação das funções necessárias para o seu pedido.' },
     { n: '02', ph: 0, name: 'Bússola', use: 'Encontrar um começo quando estiver perdido.',
       pratica: 'Faltam três semanas, você tem meia dúzia de PDFs e nenhuma ideia de por onde começar. A Bússola olha seu prazo e o seu material e devolve um próximo passo concreto.',
-      get: 'Um próximo passo concreto, usando o seu momento, o seu prazo e o material que você já informou.',
-      pede: 'Estou perdido. Meu prazo é [prazo] e tenho [material]. Qual é o meu próximo passo?' },
+      get: 'Um próximo passo concreto, usando o seu momento, o seu prazo e o material que você já informou.' },
     { n: '03', ph: 0, name: 'Tema Claro', use: 'Delimitar um interesse amplo.',
       pratica: '“Quero pesquisar inteligência artificial na educação” é amplo demais. O Tema Claro propõe recortes por contexto, público ou período — e diz o que cada um exigiria.',
-      get: 'Opções de recorte, condições a verificar e as decisões que ainda estão em aberto.',
-      pede: 'Ainda estou definindo meu projeto sobre [tema]. Proponha recortes possíveis e o que cada um exigiria.' },
+      get: 'Opções de recorte, condições a verificar e as decisões que ainda estão em aberto.' },
     { n: '04', ph: 0, name: 'Problema & Objetivos', use: 'Formular ou revisar a direção do estudo.',
       pratica: 'Seu orientador disse que a pergunta não conversa com os objetivos. Você envia os dois e recebe a análise de coerência — com o que ajustar.',
-      get: 'Pergunta e objetivos propostos, ou a análise de coerência deles com os seus procedimentos.',
-      pede: 'Esta é a minha pergunta de pesquisa e estes são os meus objetivos. Analise a coerência entre eles e com o método.' },
+      get: 'Pergunta e objetivos propostos, ou a análise de coerência deles com os seus procedimentos.' },
     { n: '05', ph: 1, name: 'Estratégia de Busca', use: 'Planejar como localizar fontes.',
       pratica: 'Antes de abrir as bases de dados, você já sai com palavras-chave e uma estratégia. Depois, cola títulos e resumos e recebe uma triagem inicial.',
-      get: 'Palavras-chave, uma estratégia de busca proposta e a triagem aparente dos títulos e resumos que você enviar.',
-      pede: 'Monte palavras-chave e uma estratégia de busca sobre [tema]. Depois, faça a triagem destes títulos e resumos.' },
+      get: 'Palavras-chave, uma estratégia de busca proposta e a triagem aparente dos títulos e resumos que você enviar.' },
     { n: '06', ph: 1, name: 'Leitor Profundo', use: 'Entender um artigo, capítulo, relatório ou trecho.',
       pratica: 'Artigo de 25 páginas na véspera da orientação. Você recebe objetivo, método e achados — cada um com a página de onde saiu, e o que não deu para verificar.',
-      get: 'Explicação, extração dos campos pedidos ou uma ficha completa — sempre com a origem e os limites.',
-      pede: 'Explique o objetivo, a metodologia e os principais achados deste artigo. Indique onde encontrou e o que não conseguiu verificar.' },
+      get: 'Explicação, extração dos campos pedidos ou uma ficha completa — sempre com a origem e os limites.' },
     { n: '07', ph: 1, name: 'Ficha Viva', use: 'Organizar documentos, fichas e contexto.',
       pratica: 'Fechou a conversa? Seu trabalho não se perde. A Ficha Viva organiza catálogo, versões e pendências para você retomar de onde parou.',
-      get: 'Catálogo com IDs, versões, o perfil do seu trabalho e as pendências de revisão.',
-      pede: 'Salve meu progresso com perfil, fontes, versões e pendências, para eu retomar depois.' },
+      get: 'Catálogo com IDs, versões, o perfil do seu trabalho e as pendências de revisão.' },
     { n: '08', ph: 2, name: 'Tabela Mestra', use: 'Ver informações de várias fontes juntas.',
       pratica: 'Dez artigos, dez jeitos de apresentar os resultados. A Tabela Mestra junta tudo em colunas — com unidades, grupos e a origem de cada número.',
-      get: 'Uma tabela com campos, unidades, grupos, a origem de cada dado e a situação da conferência.',
-      pede: 'Extraia somente [campos], em tabela. Preserve grupos, unidades e localização.' },
+      get: 'Uma tabela com campos, unidades, grupos, a origem de cada dado e a situação da conferência.' },
     { n: '09', ph: 2, name: 'Comparador', use: 'Comparar fontes ou avaliar se um artigo serve para o seu trabalho.',
       pratica: 'Dois autores parecem dizer o contrário. O Comparador mostra onde concordam, onde divergem e por quê — separando o que eles declaram do que é interpretação.',
-      get: 'Relações, diferenças, pertinência justificada, possíveis usos e limites. Nota, só se você pedir — e com critérios.',
-      pede: 'Compare estes artigos em [eixos]. Preserve as diferenças de contexto e método. Separe o que os autores declaram das suas interpretações.' },
+      get: 'Relações, diferenças, pertinência justificada, possíveis usos e limites. Nota, só se você pedir — e com critérios.' },
     { n: '10', ph: 2, name: 'Radar de Lacunas', use: 'Descobrir o que o seu acervo ainda não cobre.',
       pratica: 'Você precisa justificar a sua pesquisa. O Radar mostra o que o seu acervo ainda não cobre — e não confunde isso com lacuna na literatura.',
-      get: 'Ausências delimitadas, hipóteses de lacuna e a agenda declarada pelos autores — cada uma no seu lugar.',
-      pede: 'Identifique o que não está coberto neste acervo e diferencie isso de uma hipótese de lacuna na literatura.' },
+      get: 'Ausências delimitadas, hipóteses de lacuna e a agenda declarada pelos autores — cada uma no seu lugar.' },
     { n: '11', ph: 2, name: 'Matriz de Evidências', use: 'Relacionar os seus objetivos às fontes.',
       pratica: 'Cada objetivo do seu trabalho ganha as fontes que o sustentam, os contrapontos e o que ainda falta cobrir.',
-      get: 'Um quadro de contribuições, contrapontos e cobertura — sem confundir quantidade com qualidade.',
-      pede: 'Monte uma matriz mostrando quais fontes contribuem para cada objetivo, de que forma e com quais limites. Inclua contrapontos.' },
+      get: 'Um quadro de contribuições, contrapontos e cobertura — sem confundir quantidade com qualidade.' },
     { n: '12', ph: 3, name: 'Arquiteto', use: 'Planejar a estrutura do trabalho.',
       pratica: 'Sumário em branco. O Arquiteto propõe as seções, a função de cada uma e quais fontes você já tem para apoiá-las.',
-      get: 'Seções com função, apoios reais e pendências, adequadas ao tipo de estudo.',
-      pede: 'Planeje a estrutura do meu [tipo de trabalho], com a função de cada seção e as fontes que já tenho para apoiá-las.' },
+      get: 'Seções com função, apoios reais e pendências, adequadas ao tipo de estudo.' },
     { n: '13', ph: 3, name: 'Roteirizador', use: 'Saber o que desenvolver em uma seção.',
       pratica: 'Na hora de escrever, você recebe um roteiro por tópicos e parágrafos — com as fontes de cada um. Quem escreve é você.',
-      get: 'Um roteiro por tópicos ou parágrafos, com fontes e as questões a resolver.',
-      pede: 'Prepare um roteiro para a seção [seção], com função dos tópicos, fontes e pendências. Não invente resultados ou referências.' },
+      get: 'Um roteiro por tópicos ou parágrafos, com fontes e as questões a resolver.' },
     { n: '14', ph: 3, name: 'Normas & Referências', use: 'Organizar citações e referências.',
       pratica: 'Lista de referências na ABNT sem caçar vírgula. Se faltar um dado, ele avisa — nunca inventa DOI.',
-      get: 'Referências formatadas a partir dos metadados fornecidos e as pendências do padrão ou do manual.',
-      pede: 'Formate estes metadados conforme a ABNT. Indique pendências reais sem inventar DOI ou outros dados.' },
+      get: 'Referências formatadas a partir dos metadados fornecidos e as pendências do padrão ou do manual.' },
     { n: '15', ph: 4, name: 'Auditor Anti-Invenção', use: 'Conferir uma entrega contra o original.',
       pratica: 'Antes de entregar, você confronta a ficha com o artigo original: valores, grupos e páginas conferidos, divergências apontadas.',
-      get: 'Relatório de confronto: divergências, correções e itens não verificáveis.',
-      pede: 'Confira esta extração contra o original. Verifique valores, grupos, unidades e localizadores.' },
+      get: 'Relatório de confronto: divergências, correções e itens não verificáveis.' },
     { n: '16', ph: 3, name: 'Editor de Clareza Autoral', use: 'Melhorar o texto que você escreveu.',
       pratica: 'Seu parágrafo ficou confuso. O Editor deixa claro, preserva o sentido e os dados — e mostra o que mudou.',
-      get: 'Versão editada e as mudanças relevantes, preservando sentido e dados.',
-      pede: 'Melhore a clareza deste meu trecho preservando sentido, grau de certeza e dados. Mostre as mudanças relevantes.' },
+      get: 'Versão editada e as mudanças relevantes, preservando sentido e dados.' },
     { n: '17', ph: 4, name: 'Palco', use: 'Planejar uma apresentação visual e didática.',
       pratica: 'Apresentação amanhã. O Palco planeja os slides em 16:9: storyboard, gráficos com os dados do seu material e prompts para as ilustrações.',
-      get: 'Storyboard 16:9, estilo consistente, seleção de gráficos e tabelas com dados e prompts das ilustrações.',
-      pede: 'Planeje [N] slides para [público], em [tempo], sobre [recorte], em 16:9. Entregue storyboard e prompts das ilustrações, sem inventar gráficos ou resultados.' },
+      get: 'Storyboard 16:9, estilo consistente, seleção de gráficos e tabelas com dados e prompts das ilustrações.' },
     { n: '18', ph: 4, name: 'Modo Banca', use: 'Preparar-se para a defesa.',
       pratica: 'Simule a banca antes dela acontecer: perguntas sustentadas pelo seu próprio material e pistas para você preparar as respostas.',
-      get: 'Perguntas possíveis sustentadas pelo material e pistas para você elaborar as respostas.',
-      pede: 'Proponha perguntas possíveis sustentadas por este material e pistas para eu elaborar as respostas.' },
+      get: 'Perguntas possíveis sustentadas pelo material e pistas para você elaborar as respostas.' },
     { n: '19', ph: 1, name: 'Inspetor de Dados & Figuras', use: 'Ler e conferir tabela, planilha ou imagem.',
       pratica: 'Tabela borrada num PDF antigo? O Inspetor lê os valores com rótulos e unidades — e marca o que ficou ilegível em vez de chutar.',
-      get: 'Valores localizados com rótulos, unidades e as dúvidas de leitura.',
-      pede: 'Confira [colunas/região] desta tabela. Mostre os valores, onde estão, as unidades e as dúvidas de leitura. Não estime dígitos ilegíveis.' },
+      get: 'Valores localizados com rótulos, unidades e as dúvidas de leitura.' },
     { n: '20', ph: 4, name: 'Dossiê Final', use: 'Reunir o que foi realmente produzido.',
       pratica: 'No fim, tudo o que foi produzido de verdade num lugar só: peças, versões, revisão e pendências.',
-      get: 'A compilação das peças escolhidas, com versões, revisão e pendências.',
-      pede: 'Reúna apenas [peças]. Informe versões, fontes, revisão e pendências.' },
+      get: 'A compilação das peças escolhidas, com versões, revisão e pendências.' },
   ];
   const ORDER = PHASES.flatMap((_, k) => AGENTS.filter(a => a.ph === k)); // trilha por etapa
 
@@ -112,7 +92,8 @@
   const world = $('#world'), nodesEl = $('#nodes'), core = $('#core'), coreBtn = $('#coreBtn');
   const canvas = $('#cosmos'), ctx = canvas.getContext('2d');
   const detail = $('#detail'), offer = $('#offer'), list = $('#list');
-  const hubSub = $('#hubSub'), cursorLight = $('.cursor-light');
+  const cursorLight = $('.cursor-light');
+  const spotEl = $('#spot'), spotNum = $('#spotNum'), spotName = $('#spotName'), spotUse = $('#spotUse');
 
   /* ---------------- geometria da constelação ---------------- */
   const LAT = [-0.8, -0.42, 0, 0.42, 0.8];
@@ -161,7 +142,9 @@
   let layer = null;              // null | detail | offer | list
   let W = 0, H = 0, DPR = 1, R = 120, F = 400, YS = 1, cyNow = 0;
   const L = { pacCy: 0, pacAvail: 300, hubCy: 0, S: 160 };
-  let rotY = 0.5, rotX = -0.3, tRotX = -0.3, velY = 0, faceTarget = null;
+  let rotY = -Math.PI / 2 - 1.5, rotX = -0.3, tRotX = -0.3, velY = 0, tw = null;
+  let spot = null, holdUntil = 0, snapPending = false, spinDir = 1;
+  const HOLD = 3000;
   let hubP = 0, openAt = 0, filter = -1, warp = 0, t = 0;
   let dragging = false, down = null, lastDragEnd = 0, lastInteract = 0;
   let current = null, returnFocus = null;
@@ -263,15 +246,17 @@
     const dt = Math.min(0.05, (tm - last) / 1000); last = tm; t += dt;
     warp *= Math.pow(0.18, dt);
 
-    // rotação: inércia + giro automático quando ocioso
+    // rotação: segue o dedo → encaixa no agente mais à frente → passeio guiado quando ninguém mexe
     if (!dragging && !layer) {
-      velY *= Math.pow(0.06, dt);
-      const idle = tm - lastInteract > 2600 && faceTarget === null;
-      rotY += (velY + (idle && !RM ? 0.13 : 0)) * dt;
-      if (faceTarget !== null) {
-        const d = Math.atan2(Math.sin(faceTarget - rotY), Math.cos(faceTarget - rotY));
-        rotY += d * Math.min(1, dt * 4.5);
-        if (Math.abs(d) < 0.003) faceTarget = null;
+      if (tw) {
+        const p = tw.dur ? clamp((tm - tw.t0) / tw.dur) : 1;
+        rotY = lerp(tw.from, tw.to, easeIO(p));
+        if (p >= 1) { tw = null; holdUntil = tm + HOLD; }
+      } else {
+        velY *= Math.pow(0.05, dt);
+        rotY += velY * dt;
+        if (snapPending && Math.abs(velY) < 0.7) { snapPending = false; velY = 0; setSpot(frontMost(), 520); }
+        else if (state === 'hub' && !RM && !snapPending && tm > holdUntil && tm - lastInteract > 3200) setSpot(nextSpot(spot, spinDir), 1150);
       }
     }
     rotX += (tRotX - rotX) * Math.min(1, dt * 3.4);
@@ -304,17 +289,20 @@
       const q = proj(a.p.x * g, a.p.y * g, a.p.z * g);
       a._q = q; a.sx = q.x; a.sy = q.y;
       const dep = (q.z + 1) / 2;
+      const isSpot = a === spot && !dragging && !snapPending;
       let op = (0.3 + 0.7 * dep) * clamp(k * 1.6);
       if (filter !== -1 && a.ph !== filter) op *= 0.12;
-      const sc = q.s * (small() ? 0.92 : 1) * (0.55 + 0.45 * k);
+      if (isSpot) op = Math.max(op, 0.96 * clamp(k * 1.6));
+      if (isSpot !== a.sp) { a.sp = isSpot; a.el.classList.toggle('is-spot', isSpot); }
+      const sc = q.s * (small() ? 0.92 : 1) * (0.55 + 0.45 * k) * (isSpot ? 1.12 : 1);
       // mantém o rótulo inteiro dentro da tela (largura estimada, sem ler o layout)
       const hw = (a.far ? 46 : 44 + Math.min(a.name.length, 22) * (small() ? 6.7 : 7.2)) * sc / 2;
       const nx = clamp(q.x, 8 + hw, W - 8 - hw);
       a.sx = nx;
       a.el.style.transform = `translate3d(${nx.toFixed(1)}px,${q.y.toFixed(1)}px,0) translate(-50%,-50%) scale(${sc.toFixed(3)})`;
       a.el.style.opacity = op.toFixed(3);
-      a.el.style.zIndex = String(500 + Math.round(q.z * 100));
-      const far = filter === a.ph ? false : dep < (small() ? 0.64 : 0.34) || (filter !== -1 && a.ph !== filter);
+      a.el.style.zIndex = isSpot ? '1001' : String(500 + Math.round(q.z * 100));
+      const far = isSpot || filter === a.ph ? false : dep < (small() ? 0.64 : 0.34) || (filter !== -1 && a.ph !== filter);
       if (far !== a.far) { a.far = far; a.el.classList.toggle('is-far', far); }
       const off = op < 0.2;
       if (off !== a.off) { a.off = off; a.el.style.pointerEvents = off ? 'none' : ''; a.el.tabIndex = off ? -1 : 0; }
@@ -359,11 +347,13 @@
     state = 'opening'; openAt = now();
     core.classList.add('is-open'); warpPulse(0.9);
     body.classList.add('is-opening');
+    setSpot(ORDER[0], 2400); // a esfera gira e para no primeiro agente
     coreBtn.setAttribute('aria-label', 'Ver o pacote completo e o preço');
     setTimeout(() => { body.classList.remove('is-pacote'); body.classList.add('is-hub'); }, RM ? 0 : 520);
   }
   function toHubDone() {
     state = 'hub'; body.classList.remove('is-opening'); lastInteract = now() - 1800;
+    setTimeout(() => body.classList.add('hint-off'), 9000);
   }
   function skipToHub() {
     introDone = true;
@@ -371,6 +361,8 @@
     body.classList.remove('is-intro', 'is-pacote', 'is-opening'); body.classList.add('is-live', 'is-hub');
     core.classList.add('is-open'); coreBtn.setAttribute('aria-label', 'Ver o pacote completo e o preço');
     state = 'hub'; hubP = 1; measure();
+    rotY = ORDER[0].ang - Math.PI / 2; setSpot(ORDER[0]); holdUntil = now() + HOLD;
+    setTimeout(() => body.classList.add('hint-off'), 9000);
   }
   $('#btnOpen').addEventListener('click', openPack);
   coreBtn.addEventListener('click', () => {
@@ -380,25 +372,52 @@
   $('#btnOffer').addEventListener('click', () => openOffer(true));
   $('#btnList').addEventListener('click', () => openList(true));
 
+  /* ---------------- agente em destaque ---------------- */
+  const baseX = () => (filter === -1 ? -0.3 : LAT[filter] < 0 ? -1.12 : 1.12);
+  const eligible = a => filter === -1 || a.ph === filter;
+  function turnTo(a, dur) {
+    const target = a.ang - Math.PI / 2;
+    const d = Math.atan2(Math.sin(target - rotY), Math.cos(target - rotY));
+    velY = 0; snapPending = false;
+    tw = { from: rotY, to: rotY + d, t0: now(), dur: RM ? 0 : dur };
+  }
+  function frontMost() {
+    let best = null;
+    for (const a of ORDER) if (eligible(a) && a._q && (!best || a._q.z > best._q.z)) best = a;
+    return best || ORDER[0];
+  }
+  function nextSpot(a, dir) {
+    const pool = ORDER.filter(eligible), i = pool.indexOf(a);
+    return pool[((i < 0 ? 0 : i + dir) + pool.length) % pool.length];
+  }
+  function setSpot(a, dur) {
+    if (!a) return;
+    if (dur != null) turnTo(a, dur);
+    if (a === spot) return;
+    spot = a;
+    spotEl.style.setProperty('--c', PHASES[a.ph].c);
+    spotNum.textContent = a.n; spotName.textContent = a.name; spotUse.textContent = a.use;
+    spotEl.setAttribute('aria-label', `Ver como funciona o agente ${a.n}, ${a.name}`);
+    spotEl.classList.remove('is-swap'); void spotEl.offsetWidth; spotEl.classList.add('is-swap');
+  }
+  spotEl.addEventListener('click', () => { if (spot) openDetail(spot, true); });
+
   /* ---------------- filtro por etapa ---------------- */
   function setFilter(k) {
     filter = k;
     chips.querySelectorAll('.chip').forEach((c, i) => c.setAttribute('aria-pressed', String(i - 1 === k)));
-    if (k === -1) { tRotX = -0.3; hubSub.textContent = '20 agentes · 5 etapas · gire e toque para entrar'; }
-    else {
-      tRotX = LAT[k] < 0 ? -1.12 : 1.12;
-      hubSub.textContent = `Etapa ${k + 1} de 5 · ${PHASES[k].name} · toque para entrar`;
-    }
+    tRotX = baseX();
+    if (k !== -1) setSpot(ORDER.find(a => a.ph === k), 900);
     lastInteract = now();
   }
-  function faceNode(a) { faceTarget = a.ang - Math.PI / 2; lastInteract = now(); }
+  function faceNode(a) { setSpot(a, 650); lastInteract = now(); }
 
   /* ---------------- arrastar para girar ---------------- */
   function justDragged() { return now() - lastDragEnd < 320; }
   world.addEventListener('pointerdown', ev => {
     if (state !== 'hub' || layer) return;
     down = { x: ev.clientX, y: ev.clientY, lx: ev.clientX, ly: ev.clientY, lt: now(), id: ev.pointerId };
-    velY = 0; faceTarget = null; lastInteract = now();
+    velY = 0; tw = null; snapPending = false; lastInteract = now();
   });
   addEventListener('pointermove', ev => {
     if (FINE) { const cl = cursorLight; cl.style.transform = `translate3d(${ev.clientX}px,${ev.clientY}px,0)`; body.classList.add('has-pointer'); }
@@ -409,9 +428,10 @@
       try { world.setPointerCapture(ev.pointerId); } catch (_) { /* ok */ }
     }
     if (dragging) {
-      const k = small() ? 0.011 : 0.0075;
-      rotY += dx * k;
-      tRotX = rotX = clamp(rotX + dy * k * 0.7, -1.25, 1.25);
+      const k = small() ? 0.0105 : 0.0075;
+      rotY += dx * k;                                        // a esfera acompanha o dedo
+      tRotX = rotX = clamp(rotX - dy * k * 0.5, -1.3, 1.3);  // para cima/baixo, no mesmo sentido do dedo
+      body.classList.add('hint-off');
       const v = dx * k / Math.max(0.008, (tm - down.lt) / 1000);
       velY = clamp(velY * 0.5 + v * 0.5, -5, 5);
     }
@@ -419,13 +439,20 @@
   });
   const endDrag = ev => {
     if (!down || (ev && ev.pointerId !== down.id)) return;
-    if (dragging) lastDragEnd = now();
+    if (dragging) {
+      lastDragEnd = now();
+      if (now() - down.lt > 90) velY = 0;                    // dedo parado antes de soltar: sem embalo
+      if (Math.abs(velY) > 0.25) spinDir = Math.sign(velY);
+      else if (ev && ev.clientX !== down.x) spinDir = Math.sign(ev.clientX - down.x);
+      snapPending = true; tRotX = baseX();                   // solta: volta à inclinação e encaixa num agente
+    }
     dragging = false; down = null; lastInteract = now();
   };
   addEventListener('pointerup', endDrag); addEventListener('pointercancel', endDrag);
   world.addEventListener('wheel', ev => {
     if (state !== 'hub' || layer) return;
-    ev.preventDefault(); velY = clamp(velY + (ev.deltaY + ev.deltaX) * 0.004, -4, 4); lastInteract = now();
+    ev.preventDefault(); tw = null; velY = clamp(velY + (ev.deltaY + ev.deltaX) * 0.004, -4, 4);
+    spinDir = Math.sign(velY) || spinDir; snapPending = true; lastInteract = now();
   }, { passive: false });
 
   /* ---------------- portal (entrar em uma camada) ---------------- */
@@ -455,15 +482,18 @@
     world.style.transform = ''; world.style.opacity = '';
     world.inert = false; document.querySelectorAll('.ui').forEach(u => { u.inert = false; });
     body.classList.remove('has-layer');
-    layer = null;
+    layer = null; lastInteract = now();
+    if (el === detail && current) setSpot(current, 700);
     if (returnFocus) { const r = returnFocus; returnFocus = null; setTimeout(() => r.focus({ preventScroll: true }), 700); }
   }
 
   /* ---------------- um agente por dentro ---------------- */
   const D = {
     big: $('#dBig'), phase: $('#dPhase span'), name: $('#dNameTxt'), use: $('#dUse'), pratica: $('#dPratica'),
-    get: $('#dGet'), pede: $('#dPede'), counter: $('#dCounter'), inner: $('#dInner'), scroll: $('#dScroll'), copy: $('#dCopy'),
+    get: $('#dGet'), counter: $('#dCounter'), inner: $('#dInner'), scroll: $('#dScroll'),
+    prevName: $('#dPrevName'), nextName: $('#dNextName'), nextCard: $('#dNextCard'), ncName: $('#dNextCardName'), ncUse: $('#dNextCardUse'),
   };
+  const near = (a, d) => AGENTS[(AGENTS.indexOf(a) + d + AGENTS.length) % AGENTS.length];
   function fillDetail(a) {
     current = a;
     detail.style.setProperty('--c', PHASES[a.ph].c);
@@ -473,9 +503,13 @@
     D.use.textContent = a.use;
     D.pratica.textContent = a.pratica;
     D.get.textContent = a.get;
-    D.pede.innerHTML = esc(a.pede).replace(/\[([^\]]+)\]/g, '<mark>[$1]</mark>');
-    D.counter.textContent = `${a.n} / 20`;
-    D.copy.textContent = 'Copiar pedido';
+    D.counter.textContent = `Agente ${a.n} de 20`;
+    const p = near(a, -1), n = near(a, 1);
+    D.prevName.textContent = `${p.n} · ${p.name}`;
+    D.nextName.textContent = `${n.n} · ${n.name}`;
+    D.ncName.textContent = `${n.n} · ${n.name}`;
+    D.ncUse.textContent = n.use;
+    D.nextCard.style.setProperty('--c', PHASES[n.ph].c);
     D.scroll.scrollTop = 0;
   }
   function openDetail(a, push) {
@@ -505,12 +539,10 @@
       switching = false;
     }, RM ? 0 : 280);
   }
-  const step = d => {
-    const i = AGENTS.indexOf(current);
-    switchDetail(AGENTS[(i + d + AGENTS.length) % AGENTS.length], d);
-  };
+  const step = d => switchDetail(near(current, d), d);
   $('#dPrev').addEventListener('click', () => step(-1));
   $('#dNext').addEventListener('click', () => step(1));
+  D.nextCard.addEventListener('click', () => step(1));
 
   // deslizar para o lado troca de agente
   let sw = null;
@@ -521,20 +553,6 @@
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) step(dx < 0 ? 1 : -1);
   });
   D.scroll.addEventListener('pointercancel', () => { sw = null; });
-
-  // copiar o pedido
-  D.copy.addEventListener('click', async () => {
-    const txt = current ? current.pede : '';
-    let ok = false;
-    try { await navigator.clipboard.writeText(txt); ok = true; } catch (_) {
-      const ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.className = 'sr';
-      document.body.appendChild(ta); ta.select();
-      try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
-      ta.remove();
-    }
-    D.copy.textContent = ok ? 'Copiado!' : 'Selecione e copie';
-    setTimeout(() => { D.copy.textContent = 'Copiar pedido'; }, 1800);
-  });
 
   /* ---------------- o pacote completo ---------------- */
   function openOffer(push) {
@@ -596,8 +614,9 @@
       return;
     }
     if (state === 'hub' && !layer) {
-      if (ev.key === 'ArrowRight') { velY += 1.4; lastInteract = now(); }
-      if (ev.key === 'ArrowLeft') { velY -= 1.4; lastInteract = now(); }
+      if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft') {
+        spinDir = ev.key === 'ArrowRight' ? 1 : -1; setSpot(nextSpot(spot, spinDir), 650); lastInteract = now();
+      }
     }
   });
 

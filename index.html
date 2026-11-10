@@ -89,14 +89,18 @@
 <section class="ui ui-hub" aria-labelledby="t-hub">
   <div class="hub-top">
     <h2 id="t-hub" class="hub-title">A trilha da sua pesquisa</h2>
-    <p class="hub-sub" id="hubSub">20 agentes · 5 etapas · gire e toque para entrar</p>
+    <p class="hub-sub"><span class="tap-dot" aria-hidden="true"></span>Toque num agente para ver como funciona</p>
   </div>
   <div class="hub-bot">
-    <div class="chips" id="chips" role="group" aria-label="Filtrar por etapa"></div>
-    <button id="btnOffer" class="btn-offer" type="button">
-      <span class="dot-live" aria-hidden="true"></span>
-      Ver o pacote completo · <b>R$97</b>
+    <p class="gesture" aria-hidden="true"><span class="g-track"><i></i></span>Arraste para o lado para girar</p>
+    <button class="spot" id="spot" type="button">
+      <span class="spot-num" id="spotNum">01</span>
+      <span class="spot-txt"><b id="spotName">Maestro</b><small id="spotUse">Dizer o que você precisa, do seu jeito.</small></span>
+      <span class="spot-go">Ver<span class="sg-x">como funciona</span><svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </button>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por etapa"></div>
+    <a class="btn-main btn-hub" href="https://pay.hotmart.com/M108380282Q">Quero os 20 agentes · R$97</a>
+    <button id="btnOffer" class="link-buy" type="button">ver tudo o que vem no pacote</button>
   </div>
 </section>
 
@@ -108,7 +112,7 @@
       <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Constelação
     </button>
-    <span class="counter" id="dCounter">01 / 20</span>
+    <span class="counter" id="dCounter">Agente 01 de 20</span>
   </div>
   <div class="layer-scroll" id="dScroll">
     <article class="d-inner" id="dInner">
@@ -124,24 +128,20 @@
         <p class="d-label">Você recebe</p>
         <p class="d-text" id="dGet"></p>
       </div>
-      <div class="d-block reveal r5">
-        <p class="d-label">Peça assim</p>
-        <div class="prompt">
-          <p id="dPede"></p>
-          <button class="copy" type="button" id="dCopy">Copiar pedido</button>
-        </div>
-        <p class="d-note">Troque o que está entre colchetes pelo seu caso. Pode escrever do seu jeito — o pedido é só um modelo.</p>
-      </div>
+      <button class="d-nextcard reveal r5" id="dNextCard" type="button">
+        <small>Próximo agente</small>
+        <b id="dNextCardName">02 · Bússola</b>
+        <span id="dNextCardUse"></span>
+        <i class="nc-arrow"><svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+      </button>
     </article>
   </div>
-  <div class="layer-bot">
-    <button class="nav-btn" type="button" id="dPrev" aria-label="Agente anterior">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 3.5 5.5 9l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
+  <div class="layer-bot d-bot">
+    <div class="d-nav">
+      <button class="nav-btn" type="button" id="dPrev"><svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 3.5 5.5 9l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small><b id="dPrevName">20 · Dossiê Final</b></span></button>
+      <button class="nav-btn nav-next" type="button" id="dNext"><span><small>Próximo</small><b id="dNextName">02 · Bússola</b></span><svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path d="M7 3.5 12.5 9 7 14.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
     <a class="btn-main" href="https://pay.hotmart.com/M108380282Q">Quero os 20 agentes · R$97</a>
-    <button class="nav-btn" type="button" id="dNext" aria-label="Próximo agente">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M7 3.5 12.5 9 7 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
   </div>
 </div>
 
