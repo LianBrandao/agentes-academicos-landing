@@ -228,7 +228,7 @@
       ctx.beginPath(); ctx.moveTo(p0.x, p0.y); ctx.lineTo(p1.x, p1.y); ctx.stroke();
     }
     // pulso que percorre a trilha
-    const u = (t * 1.6) % (pts.length - 1), i0 = Math.floor(u), f = u - i0;
+    const u = Math.max(0, t * 1.6) % (pts.length - 1), i0 = Math.floor(u), f = u - i0;
     const a0 = pts[i0], a1 = pts[i0 + 1];
     const px = lerp(a0.x, a1.x, f), py = lerp(a0.y, a1.y, f);
     const g = ctx.createRadialGradient(px, py, 0, px, py, 14);
@@ -243,7 +243,8 @@
   /* ---------------- quadro a quadro ---------------- */
   let last = now();
   function frame(tm) {
-    const dt = Math.min(0.05, (tm - last) / 1000); last = tm; t += dt;
+    requestAnimationFrame(frame); // agenda antes: um quadro com erro nunca congela a animação
+    const dt = clamp((tm - last) / 1000, 0, 0.05); last = tm; t += dt; // o relógio nunca anda para trás
     warp *= Math.pow(0.18, dt);
 
     // rotação: segue o dedo → encaixa no agente mais à frente → passeio guiado quando ninguém mexe
@@ -277,7 +278,6 @@
       if (hubP > 0) { updateNodes(); drawRingsAndPath(clamp(hubP * 1.4)); }
     }
     placeCore(e);
-    requestAnimationFrame(frame);
   }
 
   const small = () => W < 700;
